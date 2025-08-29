@@ -4,17 +4,17 @@ CC		=	cc
 AR		=	ar
 CFLAGS	=	-Wall -Wextra -Werror
 
-VPATH	=	src
+SRCS	=	load_test.c \
+			launch_tests.c
+OBJS	=	$(addprefix obj/, $(SRCS:.c=.o))
 
-SRC		=	unit.c
-OBJS	=	$(addprefix obj/, $(SRCS:.cpp=.o))
-
-all:
+all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(AR) -rcs $(NAME) $(OBJS)
+	$(AR) rcs $(NAME) $(OBJS)
 
-obj/%.o: %c
+obj/%.o: %.c
+	@mkdir -p obj
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
