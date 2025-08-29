@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libunit.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
+/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:41:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/29 20:48:10 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/29 21:53:42 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,13 @@
 # include <sys/wait.h>
 
 // Test result codes
-# define OK			0
+# define OK			 0
 # define KO			-1
 # define SEGV		-2
 # define BUSE		-3
 
-typedef struct t_unit_test;
+typedef struct s_unit_test t_unit_test;
+
 typedef struct s_unit_test
 {
 	char			*name;
@@ -34,7 +35,7 @@ typedef struct s_unit_test
 	t_unit_test	*next;
 }					t_unit_test;
 
-void	load_test(t_unit_test *unit_test, char *test_name, int (*f)(int c));
-void	launch_tests(t_unit_test *unit_test);
+void	load_test(t_unit_test **unit_test, char *test_name, int (*f)(void));
+int		launch_tests(t_unit_test *unit_test);
 
 #endif
