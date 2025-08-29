@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   launch_tests.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:55:22 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/29 20:39:08 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/29 20:48:31 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
 
-void	launch_tests(t_test_suite *test_suite)
+void	launch_tests(t_unit_test *unit_test)
 {
-	(void)test_suite;
+	(void)unit_test;
 }

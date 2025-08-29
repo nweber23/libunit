@@ -6,7 +6,7 @@
 /*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:41:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/29 20:41:00 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/29 20:48:10 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@
 # define SEGV		-2
 # define BUSE		-3
 
-typedef struct t_test_suite;
-typedef struct s_test_suite
+typedef struct t_unit_test;
+typedef struct s_unit_test
 {
 	char			*name;
 	int				(*f)(int c);
 	int				expected;
 	int				result;
-	t_test_suite	*next;
-}					t_test_suite;
+	t_unit_test	*next;
+}					t_unit_test;
 
-void	load_test(t_test_suite *test_suite, char *test_name, int (*f)(int c));
-void	launch_tests(t_test_suite *test_suite);
+void	load_test(t_unit_test *unit_test, char *test_name, int (*f)(int c));
+void	launch_tests(t_unit_test *unit_test);
 
 #endif
