@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   01_basic_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
+/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 20:45:51 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/29 21:04:26 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/29 21:43:07 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../framework/libunit.h"
+#include "../../libft/libft.h"
 
-int	basic_test(void)
+int	ft_isalpha_basic_test(void)
 {
 	if (ft_isalpha('A') == 1)
 		return (0);

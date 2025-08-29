@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
+/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 20:45:12 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/29 21:10:00 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/29 21:48:20 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,8 @@ int	ft_isalpha_launcher(void)
 {
 	t_unit_test	*testlist;
 
-	load_test(&testlist, "Basic_Test", &basic_test);
+	testlist = NULL;
+	load_test(&testlist, "Basic_Test", &ft_isalpha_basic_test);
+
+	return launch_tests(testlist);
 }
