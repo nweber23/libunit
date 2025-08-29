@@ -4,3 +4,5 @@
 *.a
 *.out
 local/**/*
+unit_test
+run_tests
