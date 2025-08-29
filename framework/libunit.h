@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libunit.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:41:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/29 20:37:54 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/29 20:41:00 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <sys/wait.h>
+
+// Test result codes
+# define OK			0
+# define KO			-1
+# define SEGV		-2
+# define BUSE		-3
 
 typedef struct t_test_suite;
 typedef struct s_test_suite
