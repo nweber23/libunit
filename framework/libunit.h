@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libunit.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:41:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 12:13:46 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/30 14:07:51 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <sys/wait.h>
+# include <signal.h>
 # include "../libft/libft.h"
 
 // Test result codes
@@ -34,13 +35,15 @@ typedef struct s_unit_test
 {
 	char		name[256];
 	int			(*f)(void);
+	int			status;
 	t_unit_test	*next;
 }				t_unit_test;
 
 void	load_test(t_list **lst, char *test_name, int (*f)(void));
-int		launch_tests(t_list *lst);
+int		launch_tests(char *func_name, t_list *lst);
 
 // utils.c
 void	ftu_print_error_fd(char *error_msg, char *test_name, int fd);
+void	ftu_print_result(char *func_name, t_unit_test *unit_test);
 
 #endif
