@@ -18,7 +18,10 @@ SRCS	=	main.c \
 			ft_isalpha/10_int_max_test.c \
 			ft_strlen/00_launcher.c \
 			ft_strlen/01_basic_test.c \
-			ft_strlen/02_null_test.c
+			ft_strlen/02_null_test.c \
+			ft_strlen/03_empty_test.c \
+			ft_strlen/04_whitespace_test.c \
+			ft_strlen/05_42char_test.c
 
 OBJS	=	$(addprefix obj/, $(SRCS:.c=.o))
 

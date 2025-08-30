@@ -6,7 +6,7 @@
 /*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 21:09:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 16:42:09 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/30 18:44:12 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,8 @@ int	ft_isalpha_int_max_test(void);
 int	ft_strlen_launcher(void);
 int	ft_strlen_basic_test(void);
 int	ft_strlen_null_test(void);
+int	ft_strlen_empty_test(void);
+int	ft_strlen_whitespace_test(void);
+int	ft_strlen_42chars_test(void);
 
 #endif
