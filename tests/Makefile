@@ -17,7 +17,7 @@ LIBFT	=	../libft/libft.a
 LIBUNIT	=	../framework/libunit.a
 
 test: $(LIBFT) $(LIBUNIT) $(NAME)
-	./$(NAME)
+	@./$(NAME)
 
 $(LIBFT):
 	cd ../libft && $(MAKE) bonus
@@ -27,6 +27,7 @@ $(LIBUNIT):
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(LIBUNIT) -o $(NAME)
+	@echo "================================================================================\n"
 
 obj/%.o: %.c
 	@mkdir -p obj
