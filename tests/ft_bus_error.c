@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bus_error.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 17:39:31 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 18:21:24 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/30 18:27:53 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # define FLAG 1
 #endif
 
-#ifdef __LINUX__
+#ifdef __linux__
 # define WE_ARE_ON_LINUX 1
 #else
 # define WE_ARE_ON_LINUX 0
