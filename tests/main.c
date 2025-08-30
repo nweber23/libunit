@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
+/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 20:43:50 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 15:16:43 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/30 16:21:55 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@
 
 int	main(void)
 {
-	ft_putstr_fd(LIGHTCYAN"Let the testing begin ...\n"RESET, 1);
+	ft_putstr_fd(LIGHTCYAN""BOLD"Let the testing begin ...\n\n"RESET, 1);
 	ft_isalpha_launcher();
 	ft_strlen_launcher();
+	ftu_print_final_result();
 	return (0);
 }
