@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_launcher.c                                      :+:      :+:    :+:   */
+/*   05_abort_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 16:58:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 18:35:51 by nmihaile         ###   ########.fr       */
+/*   Created: 2025/08/30 18:31:28 by nmihaile          #+#    #+#             */
+/*   Updated: 2025/08/30 19:37:41 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../framework/libunit.h"
 #include "../dummy.h"
 
-int	ft_dummy_launcher(void)
+int	ft_abort_test(void)
 {
-	t_list	*testlist;
+	static char	str[] = "HELLO 42";
 
-	testlist = NULL;
-	load_test(&testlist, "OK_Test", &ft_ok_test);
-	load_test(&testlist, "KO_Test", &ft_ko_test);
-	load_test(&testlist, "SEGV_Test", &ft_segv_test);
-	load_test(&testlist, "BUSE_Test", &ft_bus_error_test);
-	load_test(&testlist, "ABORT_Test", &ft_abort_test);
-	return (launch_tests("Dummy_Test", testlist));
+	free(str);
+	return (0);
 }

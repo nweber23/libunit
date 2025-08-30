@@ -6,7 +6,7 @@
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:41:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 18:11:52 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/30 18:36:32 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define KO			1
 # define SEGV		2
 # define BUSE		3
+# define ABRT		4
 
 # define FAILED_CREATE_UNITTEST	"Failed to create (and add) unit_test: "
 # define FAILED_ADD_UNITTEST	"Failed to add unit_test test: "

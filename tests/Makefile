@@ -8,7 +8,8 @@ SRCS	=	main.c \
 			dummy/01_ok_test.c \
 			dummy/02_ko_test.c \
 			dummy/03_sigsegv_test.c \
-			dummy/04_bus_error_test.c
+			dummy/04_bus_error_test.c \
+			dummy/05_abort_test.c
 
 OBJS	=	$(addprefix obj/, $(SRCS:.c=.o))
 

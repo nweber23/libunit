@@ -3,14 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   launch_tests.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
+/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:55:22 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/30 16:42:47 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/30 19:52:33 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
+#include <fcntl.h>
+
+static void	silent_fd(int fd_out)
+{
+	int fd;
+
+	fd = open("/dev/null", O_WRONLY);
+	if (fd != -1)
+	{
+		dup2(fd, fd_out);
+		close(fd);
+	}
+}
+
+static int	wait_on_pid(int *status)
+{
+	wait(status);
+	if (WIFSIGNALED(*status))
+	{
+		if (WTERMSIG(*status) == SIGSEGV)
+			return (SEGV);
+		if (WTERMSIG(*status) == SIGBUS)
+			return (BUSE);
+		if (WTERMSIG(*status) == SIGABRT)
+			return (ABRT);
+	}
+	else if (WIFEXITED(*status) && WEXITSTATUS(*status) == 0)
+		return (OK);
+	return (KO);
+}
 
 static int	exec_unit_test(t_unit_test *unit_test, t_list *lst)
 {
@@ -21,23 +51,15 @@ static int	exec_unit_test(t_unit_test *unit_test, t_list *lst)
 	pid = fork();
 	if (pid == 0)
 	{
+		silent_fd(STDERR_FILENO);
+		silent_fd(STDIN_FILENO);
 		func = unit_test->f;
 		ft_lstclear(&lst, free);
 		if (func() == -1)
 			exit(EXIT_FAILURE);
 		exit(EXIT_SUCCESS);
 	}
-	wait(&status);
-	if (WIFSIGNALED(status))
-	{
-		if (WTERMSIG(status) == SIGSEGV)
-			return (SEGV);
-		if (WTERMSIG(status) == SIGBUS)
-			return (BUSE);
-	}
-	else if (WIFEXITED(status) && WEXITSTATUS(status) == 0)
-		return (OK);
-	return (KO);
+	return (wait_on_pid(&status));
 }
 
 int	launch_tests(char *func_name, t_list *lst)
