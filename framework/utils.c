@@ -6,7 +6,7 @@
 /*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:01:08 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/30 15:21:50 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/30 15:43:16 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,16 @@ void	ftu_print_result(char *func_name, t_unit_test *unit_test)
 	ft_putstr_fd(unit_test->name, 1);
 	ft_putstr_fd(": ", 1);
 	ft_putendl_fd(status_msg[unit_test->status], 1);
+}
+void	ftu_print_routine_results(int count, int passed)
+{
+	if (passed == count)
+		ft_putstr_fd(LIGHTGREEN, 1);
+	else
+		ft_putstr_fd(LIGHTRED, 1);
+	ft_putnbr_fd(passed, 1);
+	ft_putstr_fd("/", 1);
+	ft_putnbr_fd(count, 1);
+	ft_putendl_fd(" tests passed", 1);
+	ft_putendl_fd(DEFAULT, 1);
 }
