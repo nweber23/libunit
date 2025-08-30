@@ -6,7 +6,7 @@
 /*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:41:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 14:07:51 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/30 14:15:53 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@
 # include "../libft/libft.h"
 
 // Test result codes
-# define OK			 0
-# define KO			-1
-# define SEGV		-2
-# define BUSE		-3
+# define OK			0
+# define KO			1
+# define SEGV		2
+# define BUSE		3
 
 # define FAILED_CREATE_UNITTEST	"Failed to create (and add) unit_test: "
 # define FAILED_ADD_UNITTEST	"Failed to add unit_test test: "
