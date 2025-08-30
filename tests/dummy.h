@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dummy.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
+/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 16:57:33 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 17:47:20 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/30 18:20:28 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 # include "../libft/libft.h"
 
 // Helper
-int	ft_bus_error_linux(void);
-int	ft_bus_error_mac(void);
+int ft_bus_error(void);
 
 int	ft_dummy_launcher(void);
 int	ft_ok_test(void);

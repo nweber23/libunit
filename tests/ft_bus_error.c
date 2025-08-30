@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bus_error.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
+/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 17:39:31 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 17:52:07 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/30 18:21:24 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,13 @@
 # define FLAG 1
 #endif
 
-int	ft_bus_error_linux(void)
+#ifdef __LINUX__
+# define WE_ARE_ON_LINUX 1
+#else
+# define WE_ARE_ON_LINUX 0
+#endif
+
+static int	ft_bus_error_linux(void)
 {
 	char	arr[4];
 	int		*ptr;
@@ -37,10 +43,18 @@ int	ft_bus_error_linux(void)
 	return (0);
 }
 
-int	ft_bus_error_mac(void)
+static int	ft_bus_error_mac(void)
 {
 	static char	*str = "Hallo";
 
 	str[0] = 'A';
 	return (0);
+}
+
+int	ft_bus_error(void)
+{
+	if (WE_ARE_ON_LINUX)
+		return (ft_bus_error_linux());
+	else
+		return (ft_bus_error_mac());
 }

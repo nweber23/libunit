@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   04_bus_error_test.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
+/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 17:08:19 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 17:48:08 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/30 18:20:47 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_bus_error_test(void)
 {
-	if (ft_bus_error_linux() == 0)
+	if (ft_bus_error() == 0)
 		return (0);
 	else
 		return (-1);
