@@ -6,7 +6,7 @@
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 20:43:50 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/29 22:08:37 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/30 10:13:34 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 int main(void)
 {
 	write(1, "Let the testing begin ...\n", 27);
-	
+
+	// launch ft_isalpha
+	ft_isalpha_launcher();
+
 	return (0);
 }
