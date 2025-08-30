@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   launch_tests.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
+/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:55:22 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/30 15:58:15 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/30 16:17:22 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int	launch_tests(char *func_name, t_list *lst)
 		ftu_print_result(func_name, unit_test);
 		curr = curr->next;
 	}
+	ftu_count_routine_result(count, passed, true);
 	ftu_print_routine_results(count, passed);
 	ft_lstclear(&lst, free);
 	return (0);

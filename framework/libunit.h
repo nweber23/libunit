@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libunit.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
+/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:41:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 15:42:33 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/30 16:16:19 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <sys/wait.h>
 # include <signal.h>
+# include <stdbool.h>
 # include "colors.h"
 # include "../libft/libft.h"
 
@@ -47,5 +48,9 @@ int		launch_tests(char *func_name, t_list *lst);
 void	ftu_print_error_fd(char *error_msg, char *test_name, int fd);
 void	ftu_print_result(char *func_name, t_unit_test *unit_test);
 void	ftu_print_routine_results(int count, int passed);
+void	ftu_print_final_result(void);
+
+// utils-counter.c
+bool	ftu_count_routine_result(int count, int passed, bool count_it);
 
 #endif
