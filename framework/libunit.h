@@ -6,7 +6,7 @@
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:41:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 16:16:19 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/30 16:48:31 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,13 @@
 
 # define FAILED_CREATE_UNITTEST	"Failed to create (and add) unit_test: "
 # define FAILED_ADD_UNITTEST	"Failed to add unit_test test: "
+# define ALL_TESTS_PASSED_MSG \
+"╔═══════════════════════════════════════" \
+"═══════════════════════════════════════╗\n" \
+"║                 🎉🥳" LIGHTGREEN BOLD "All tests " \
+"passed!" REGULAR GREEN " Congratulations! 🥳🎉                  ║\n" \
+"╚══════════════════════════════════════" \
+"════════════════════════════════════════╝\n"
 
 typedef struct s_unit_test	t_unit_test;
 
