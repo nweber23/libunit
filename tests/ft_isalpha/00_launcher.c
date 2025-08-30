@@ -6,7 +6,7 @@
 /*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 20:45:12 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 14:01:41 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/30 14:11:58 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ int	ft_isalpha_launcher(void)
 
 	testlist = NULL;
 	load_test(&testlist, "Basic_Test", &ft_isalpha_basic_test);
+	load_test(&testlist, "Failed_Test", &ft_isalpha_failed_test);
 	return (launch_tests("ft_isalpha", testlist));
 }

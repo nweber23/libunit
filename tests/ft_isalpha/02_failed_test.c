@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_functions.h                                   :+:      :+:    :+:   */
+/*   02_failed_test.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/29 21:09:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 14:11:48 by nweber           ###   ########.fr       */
+/*   Created: 2025/08/30 14:09:28 by nweber            #+#    #+#             */
+/*   Updated: 2025/08/30 14:16:52 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEST_FUNCTIONS_H
-# define TEST_FUNCTIONS_H
+#include "../../libft/libft.h"
 
-// test ft_isalpha
-int	ft_isalpha_launcher(void);
-int	ft_isalpha_basic_test(void);
-int	ft_isalpha_failed_test(void);
-
-#endif
+int	ft_isalpha_failed_test(void)
+{
+	if (ft_isalpha('9') != 1)
+		return (0);
+	else
+		return (-1);
+}

@@ -9,7 +9,8 @@ VPATH	=	./ \
 
 SRCS	=	main.c \
 			00_launcher.c \
-			01_basic_test.c
+			01_basic_test.c \
+			02_failed_test.c
 
 OBJS	=	$(addprefix obj/, $(SRCS:.c=.o))
 
