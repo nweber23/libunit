@@ -6,7 +6,7 @@
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 20:43:50 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 13:02:53 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/30 14:53:54 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,7 @@ int	main(void)
 	
 	// launch ft_isalpha
 	ft_isalpha_launcher();
+	// launch ft_strlen
+	ft_strlen_launcher();
 	return (0);
 }

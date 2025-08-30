@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_functions.h                                   :+:      :+:    :+:   */
+/*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/29 21:09:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 14:38:35 by nmihaile         ###   ########.fr       */
+/*   Created: 2025/08/30 14:32:31 by nmihaile          #+#    #+#             */
+/*   Updated: 2025/08/30 15:03:03 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEST_FUNCTIONS_H
-# define TEST_FUNCTIONS_H
+#include "../../framework/libunit.h"
+#include "../../libft/libft.h"
+#include "../test_functions.h"
 
-// test ft_isalpha
-int	ft_isalpha_launcher(void);
-int	ft_isalpha_basic_test(void);
-int	ft_isalpha_failed_test(void);
+// This right here, is our test routine
+int	ft_strlen_launcher(void)
+{
+	t_list	*testlist;
 
-// test ft_strlen
-int	ft_strlen_launcher(void);
-int	ft_strlen_basic_test(void);
-int	ft_strlen_null_test(void);
-
-#endif
+	testlist = NULL;
+	load_test(&testlist, "Basic_Test", &ft_strlen_basic_test);
+	load_test(&testlist, "NULL_Test", &ft_strlen_null_test);
+	return (launch_tests("ft_strlen", testlist));
+}

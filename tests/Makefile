@@ -4,13 +4,13 @@ NAME	=	unit_test
 CC		=	cc
 CFLAGS	=	-Wall -Wextra -Werror
 
-VPATH	=	./ \
-			ft_isalpha/
-
 SRCS	=	main.c \
-			00_launcher.c \
-			01_basic_test.c \
-			02_failed_test.c
+			ft_isalpha/00_launcher.c \
+			ft_isalpha/01_basic_test.c \
+			ft_isalpha/02_failed_test.c \
+			ft_strlen/00_launcher.c \
+			ft_strlen/01_basic_test.c \
+			ft_strlen/02_null_test.c
 
 OBJS	=	$(addprefix obj/, $(SRCS:.c=.o))
 
@@ -30,7 +30,7 @@ $(NAME): $(OBJS)
 	@echo "================================================================================\n"
 
 obj/%.o: %.c
-	@mkdir -p obj
+	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
