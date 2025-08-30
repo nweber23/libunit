@@ -6,7 +6,7 @@
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:41:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 09:57:10 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/30 12:13:46 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <sys/wait.h>
+# include "../libft/libft.h"
 
 // Test result codes
 # define OK			 0
@@ -24,7 +25,10 @@
 # define SEGV		-2
 # define BUSE		-3
 
-typedef struct s_unit_test t_unit_test;
+# define FAILED_CREATE_UNITTEST	"Failed to create (and add) unit_test: "
+# define FAILED_ADD_UNITTEST	"Failed to add unit_test test: "
+
+typedef struct s_unit_test	t_unit_test;
 
 typedef struct s_unit_test
 {
@@ -33,7 +37,10 @@ typedef struct s_unit_test
 	t_unit_test	*next;
 }				t_unit_test;
 
-void	load_test(t_unit_test **unit_test, char *test_name, int (*f)(void));
-int		launch_tests(t_unit_test *unit_test);
+void	load_test(t_list **lst, char *test_name, int (*f)(void));
+int		launch_tests(t_list *lst);
+
+// utils.c
+void	ftu_print_error_fd(char *error_msg, char *test_name, int fd);
 
 #endif
