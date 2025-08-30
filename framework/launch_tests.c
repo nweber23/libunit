@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   launch_tests.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
+/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:55:22 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/30 14:02:33 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/30 15:01:37 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,20 @@ static int	exec_unit_test(t_unit_test *unit_test)
 	pid = fork();
 	if (pid == 0)
 	{
-		if (unit_test->f())
+		if (unit_test->f() == -1)
 			exit(EXIT_FAILURE);
 		exit(EXIT_SUCCESS);
 	}
 	wait(&status);
-	if (WIFEXITED(status) && WEXITSTATUS(status) == 0)
-		return (OK);
-	else if (WIFEXITED(status))
-		return (KO);
-	else if (WIFSIGNALED(status))
+	if (WIFSIGNALED(status))
 	{
 		if (WTERMSIG(status) == SIGSEGV)
 			return (SEGV);
-		else if (WTERMSIG(status) == SIGBUS)
+		if (WTERMSIG(status) == SIGBUS)
 			return (BUSE);
 	}
+	else if (WIFEXITED(status) && WEXITSTATUS(status) == 0)
+		return (OK);
 	return (KO);
 }
 
