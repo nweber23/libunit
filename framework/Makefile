@@ -6,7 +6,7 @@ CFLAGS	=	-Wall -Wextra -Werror
 
 SRCS	=	load_test.c \
 			launch_tests.c \
-			utils.c \
+			utils_print.c \
 			utils_counter.c
 OBJS	=	$(addprefix obj/, $(SRCS:.c=.o))
 

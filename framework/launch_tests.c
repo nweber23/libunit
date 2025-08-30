@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   launch_tests.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:55:22 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/30 16:17:22 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/30 16:42:47 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ static int	exec_unit_test(t_unit_test *unit_test, t_list *lst)
 
 int	launch_tests(char *func_name, t_list *lst)
 {
-	int	count;
-	int	passed;
+	int			count;
+	int			passed;
 	t_list		*curr;
 	t_unit_test	*unit_test;
 
