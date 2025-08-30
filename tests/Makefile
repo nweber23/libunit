@@ -1,5 +1,5 @@
 
-# unit_test, run_tests 
+# unit_test, run_tests
 NAME	=	unit_test
 CC		=	cc
 CFLAGS	=	-Wall -Wextra -Werror
@@ -25,7 +25,7 @@ $(LIBUNIT):
 	cd ../framework && $(MAKE)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(LIBUNIT) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBUNIT) $(LIBFT) -o $(NAME)
 	@echo "================================================================================\n"
 
 obj/%.o: %.c
