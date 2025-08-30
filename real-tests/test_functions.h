@@ -6,7 +6,7 @@
 /*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 21:09:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 16:42:09 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/30 19:07:21 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,20 @@ int	ft_isalpha_int_max_test(void);
 int	ft_strlen_launcher(void);
 int	ft_strlen_basic_test(void);
 int	ft_strlen_null_test(void);
+int	ft_strlen_empty_test(void);
+int	ft_strlen_whitespace_test(void);
+int	ft_strlen_42chars_test(void);
+
+// test ft_strcmp
+int	ft_strcmp_launcher(void);
+int	ft_strcmp_equal_test(void);
+int	ft_strcmp_less_test(void);
+int	ft_strcmp_greater_test(void);
+int	ft_strcmp_empty_non_nonempty_test(void);
+int	ft_strcmp_both_empty_test(void);
+int	ft_strcmp_prefix_less_test(void);
+int	ft_strcmp_diff_at_end_test(void);
+int	ft_strcmp_case_sensitive_test(void);
+int	ft_strcmp_extended_ascii_order_test(void);
 
 #endif

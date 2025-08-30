@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   07_diff_at_end_test.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 16:58:49 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 19:48:59 by nweber           ###   ########.fr       */
+/*   Created: 2025/08/30 19:00:45 by nweber            #+#    #+#             */
+/*   Updated: 2025/08/30 19:11:31 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../framework/libunit.h"
-#include "dummy.h"
+#include "../../libft/libft.h"
 
-int	main(void)
+int	ft_strcmp_diff_at_end_test(void)
 {
-	ft_putstr_fd(LIGHTCYAN""BOLD"---------«««<< DUMMY TESTING >>»»»---------\n\n"RESET, 1);
-	ft_dummy_launcher();
-	ftu_print_final_result();
-	return (0);
+	if (ft_strcmp("abcdefg", "abcdefh") < 0)
+		return (0);
+	else
+		return (-1);
 }
