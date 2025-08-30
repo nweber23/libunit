@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_failed_test.c                                   :+:      :+:    :+:   */
+/*   04_zero_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 14:09:28 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 14:16:52 by nweber           ###   ########.fr       */
+/*   Created: 2025/08/30 14:25:34 by nweber            #+#    #+#             */
+/*   Updated: 2025/08/30 14:33:00 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft/libft.h"
 
-int	ft_isalpha_failed_test(void)
+int	ft_islpha_zero_test(void)
 {
-	if (ft_isalpha('9') != 1)
+	if(ft_isalpha(0) != 1)
 		return (0);
 	else
 		return (-1);

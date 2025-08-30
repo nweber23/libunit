@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_functions.h                                   :+:      :+:    :+:   */
+/*   03_whitespace_test.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/29 21:09:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 14:33:13 by nweber           ###   ########.fr       */
+/*   Created: 2025/08/30 14:20:44 by nweber            #+#    #+#             */
+/*   Updated: 2025/08/30 14:23:58 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEST_FUNCTIONS_H
-# define TEST_FUNCTIONS_H
+#include "../../libft/libft.h"
 
-// test ft_isalpha
-int	ft_isalpha_launcher(void);
-int	ft_isalpha_basic_test(void);
-int	ft_isalpha_digit_test(void);
-int	ft_isalpha_whitespace_test(void);
-int	ft_islpha_zero_test(void);
-
-#endif
+int	ft_isalpha_whitespace_test(void)
+{
+	if (ft_isalpha('\t') != 1)
+		return (0);
+	else
+		return (-1);
+}
