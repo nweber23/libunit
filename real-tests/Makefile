@@ -1,5 +1,4 @@
-
-# unit_test, run_tests
+MAKEFLAGS	+=	-s
 NAME	=	unit_test
 CC		=	cc
 CFLAGS	=	-Wall -Wextra -Werror
@@ -48,7 +47,6 @@ $(LIBUNIT):
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBUNIT) $(LIBFT) -o $(NAME)
-	@echo "================================================================================\n"
 
 obj/%.o: %.c
 	@mkdir -p $(dir $@)
