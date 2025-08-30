@@ -16,8 +16,7 @@ OBJS	=	$(addprefix obj/, $(SRCS:.c=.o))
 LIBFT	=	../libft/libft.a
 LIBUNIT	=	../framework/libunit.a
 
-test: $(LIBFT) $(LIBUNIT) $(NAME)
-	@./$(NAME)
+all: $(LIBFT) $(LIBUNIT) $(NAME)
 
 $(LIBFT):
 	cd ../libft && $(MAKE) bonus
@@ -44,3 +43,6 @@ fclean: clean
 re:
 	$(MAKE) fclean
 	$(MAKE) all
+
+test: all
+	@./$(NAME)

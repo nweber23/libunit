@@ -6,7 +6,7 @@
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:41:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/29 21:53:42 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/30 09:57:10 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,10 @@ typedef struct s_unit_test t_unit_test;
 
 typedef struct s_unit_test
 {
-	char			*name;
-	int				(*f)(int c);
-	int				expected;
-	int				result;
+	char		name[256];
+	int			(*f)(void);
 	t_unit_test	*next;
-}					t_unit_test;
+}				t_unit_test;
 
 void	load_test(t_unit_test **unit_test, char *test_name, int (*f)(void));
 int		launch_tests(t_unit_test *unit_test);
