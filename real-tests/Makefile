@@ -21,7 +21,17 @@ SRCS	=	main.c \
 			ft_strlen/02_null_test.c \
 			ft_strlen/03_empty_test.c \
 			ft_strlen/04_whitespace_test.c \
-			ft_strlen/05_42char_test.c
+			ft_strlen/05_42char_test.c \
+			ft_strcmp/00_launcher.c \
+			ft_strcmp/01_equal_test.c \
+			ft_strcmp/02_less_test.c \
+			ft_strcmp/03_greater_test.c \
+			ft_strcmp/04_empty_non_empty_test.c \
+			ft_strcmp/05_both_empty_test.c \
+			ft_strcmp/06_prefix_less_test.c \
+			ft_strcmp/07_diff_at_end_test.c \
+			ft_strcmp/08_case_sensitive_test.c \
+			ft_strcmp/09_extended_ascii_order_test.c
 
 OBJS	=	$(addprefix obj/, $(SRCS:.c=.o))
 

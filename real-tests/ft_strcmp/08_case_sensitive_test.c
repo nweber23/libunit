@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   08_case_sensitive_test.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/29 20:43:50 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 19:06:42 by nweber           ###   ########.fr       */
+/*   Created: 2025/08/30 19:01:41 by nweber            #+#    #+#             */
+/*   Updated: 2025/08/30 19:11:35 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../framework/libunit.h"
-#include "../framework/colors.h"
-#include "../libft/libft.h"
-#include "test_functions.h"
+#include "../../libft/libft.h"
 
-int	main(void)
+int	ft_strcmp_case_sensitive_test(void)
 {
-	ft_putstr_fd(LIGHTCYAN""BOLD"Let the testing begin ...\n\n"RESET, 1);
-	ft_isalpha_launcher();
-	ft_strlen_launcher();
-	ft_strcmp_launcher();
-	ftu_print_final_result();
-	return (0);
+	if (ft_strcmp("abc", "Abc") > 0)
+		return (0);
+	else
+		return (-1);
 }

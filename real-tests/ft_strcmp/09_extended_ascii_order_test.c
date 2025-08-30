@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   09_extended_ascii_order_test.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/29 20:43:50 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 19:06:42 by nweber           ###   ########.fr       */
+/*   Created: 2025/08/30 19:02:35 by nweber            #+#    #+#             */
+/*   Updated: 2025/08/30 19:03:12 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../framework/libunit.h"
-#include "../framework/colors.h"
-#include "../libft/libft.h"
-#include "test_functions.h"
+#include "../../libft/libft.h"
 
-int	main(void)
+int	ft_strcmp_extended_ascii_order_test(void)
 {
-	ft_putstr_fd(LIGHTCYAN""BOLD"Let the testing begin ...\n\n"RESET, 1);
-	ft_isalpha_launcher();
-	ft_strlen_launcher();
-	ft_strcmp_launcher();
-	ftu_print_final_result();
-	return (0);
+	if (ft_strcmp("\x7F", "\x80") < 0)
+		return (0);
+	else
+		return (-1);
 }
