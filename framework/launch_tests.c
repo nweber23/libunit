@@ -6,21 +6,24 @@
 /*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:55:22 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/30 15:46:24 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/30 15:58:15 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
 
-static int	exec_unit_test(t_unit_test *unit_test)
+static int	exec_unit_test(t_unit_test *unit_test, t_list *lst)
 {
 	pid_t	pid;
 	int		status;
+	int		(*func)(void);
 
 	pid = fork();
 	if (pid == 0)
 	{
-		if (unit_test->f() == -1)
+		func = unit_test->f;
+		ft_lstclear(&lst, free);
+		if (func() == -1)
 			exit(EXIT_FAILURE);
 		exit(EXIT_SUCCESS);
 	}
@@ -51,12 +54,13 @@ int	launch_tests(char *func_name, t_list *lst)
 	{
 		unit_test = (t_unit_test *)(curr->content);
 		++count;
-		unit_test->status = exec_unit_test(unit_test);
+		unit_test->status = exec_unit_test(unit_test, lst);
 		if (unit_test->status == 0)
 			++passed;
 		ftu_print_result(func_name, unit_test);
 		curr = curr->next;
 	}
 	ftu_print_routine_results(count, passed);
+	ft_lstclear(&lst, free);
 	return (0);
 }
