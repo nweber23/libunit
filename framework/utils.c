@@ -6,7 +6,7 @@
 /*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:01:08 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/30 14:07:38 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/30 15:21:50 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ftu_print_error_fd(char *error_msg, char *test_name, int fd)
 // [test_function]:[test_name]:[status]
 void	ftu_print_result(char *func_name, t_unit_test *unit_test)
 {
-	static char	status_msg[4][32] = {"OK", "KO", "SIGV", "BUSE"};
+	static char	status_msg[4][32] = {LIGHTGREEN"[OK]"DEFAULT , LIGHTRED"[KO]"DEFAULT, YELLOW"[SIGV]"DEFAULT, YELLOW"[BUSE]"DEFAULT};
 
 	ft_putstr_fd(func_name, 1);
 	ft_putstr_fd(": ", 1);
