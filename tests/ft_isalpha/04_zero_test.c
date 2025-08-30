@@ -6,7 +6,7 @@
 /*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 14:25:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 14:41:04 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/30 16:42:30 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_islpha_zero_test(void)
 {
-	if(ft_isalpha(0) != 1)
+	if (ft_isalpha(0) != 1)
 		return (0);
 	else
 		return (-1);
