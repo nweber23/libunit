@@ -6,7 +6,7 @@
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:55:22 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/31 20:20:06 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/31 20:44:48 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,6 @@ static void	silent_fd(int fd_out)
 		close(fd);
 	}
 }
-
-// static void	set_signal_and_exit_code(int signum, int exit_code,
-// 				t_unit_test * unit_test)
-// {
-// 	unit_test
-// }
 
 static int	evaluate_child_exit_code(int *status, t_unit_test *unit_test)
 {
