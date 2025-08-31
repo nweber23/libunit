@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_print.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
+/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:01:08 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/31 14:06:31 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/31 15:32:21 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,11 @@ void	ftu_print_final_result(void)
 		ft_putendl_fd(DEFAULT, 1);
 		return ;
 	}
+	ft_putstr_fd(LIGHTRED" ❌ only "LIGHTRED BOLD, 1);
+	ft_putnbr_fd(ftu_total_test_passed(false), 1);
+	ft_putchar_fd('/', 1);
+	ft_putnbr_fd(ftu_total_test_count(false), 1);
+	ft_putendl_fd(REGULAR" tests passed!" REGULAR, 1);
+	ft_putstr_fd("===============================================", 1);
+	ft_putendl_fd(DEFAULT, 1);
 }

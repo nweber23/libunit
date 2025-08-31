@@ -6,7 +6,7 @@
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:41:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/31 14:53:58 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/31 15:21:58 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ void	ftu_print_final_result(void);
 void	ftu_write_log(char *func_name, t_list *lst, int count, int passed);
 
 // utils-counter.c
+int		ftu_total_test_count(bool count_it);
+int		ftu_total_test_passed(bool count_it);
 bool	ftu_count_routine_result(int count, int passed, bool count_it);
 
 // utils-signal.c

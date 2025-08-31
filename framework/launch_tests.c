@@ -6,7 +6,7 @@
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:55:22 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/31 14:54:21 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/31 15:26:58 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,10 @@ static int	evaluate_child_exit_code(int *status)
 			return (SILL);
 	}
 	else if (WIFEXITED(*status) && WEXITSTATUS(*status) == 0)
+	{
+		ftu_total_test_passed(true);
 		return (OK);
+	}
 	return (KO);
 }
 
@@ -69,6 +72,7 @@ static int	exec_unit_test(t_unit_test *unit_test, t_list *lst)
 	int		timeout_count;
 	int		wait_result;
 
+	ftu_total_test_count(true);
 	timeout_count = 0;
 	pid = fork();
 	if (pid == 0)
