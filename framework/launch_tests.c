@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   launch_tests.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
+/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:55:22 by nmihaile          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2025/08/31 12:15:30 by nmihaile         ###   ########.fr       */
-=======
-/*   Updated: 2025/08/31 13:20:52 by nweber           ###   ########.fr       */
->>>>>>> 2efd4bd936bd0bbcd4c785abbc28818ea60c05f4
+/*   Updated: 2025/08/31 13:40:08 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

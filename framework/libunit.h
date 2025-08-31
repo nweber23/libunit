@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libunit.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
+/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:41:34 by nweber            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2025/08/31 12:15:55 by nmihaile         ###   ########.fr       */
-=======
-/*   Updated: 2025/08/31 13:12:55 by nweber           ###   ########.fr       */
->>>>>>> 2efd4bd936bd0bbcd4c785abbc28818ea60c05f4
+/*   Updated: 2025/08/31 13:39:54 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +28,13 @@
 # define SEGV		2
 # define BUSE		3
 # define ABRT		4
-<<<<<<< HEAD
 # define SFPE		5
 # define PIPE		6
-=======
-# define PIPE		5
-# define TIMEOUT	6
+# define TIMEOUT	7
 
 # ifndef TIMEOUT_PERIOD
 #  define TIMEOUT_PERIOD 10
 # endif
->>>>>>> 2efd4bd936bd0bbcd4c785abbc28818ea60c05f4
 
 # define FAILED_CREATE_UNITTEST	"Failed to create (and add) unit_test: "
 # define FAILED_ADD_UNITTEST	"Failed to add unit_test test: "

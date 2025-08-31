@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_print.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
+/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:01:08 by nmihaile          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2025/08/31 12:16:32 by nmihaile         ###   ########.fr       */
-=======
-/*   Updated: 2025/08/31 13:31:18 by nweber           ###   ########.fr       */
->>>>>>> 2efd4bd936bd0bbcd4c785abbc28818ea60c05f4
+/*   Updated: 2025/08/31 13:39:35 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +22,14 @@ void	ftu_print_error_fd(char *error_msg, char *test_name, int fd)
 
 void	ftu_print_result(char *func_name, t_unit_test *unit_test)
 {
-	static char	status_msg[7][32] = {LIGHTGREEN"[OK]"DEFAULT, \
+	static char	status_msg[8][32] = {LIGHTGREEN"[OK]"DEFAULT, \
 		LIGHTRED"[KO]"DEFAULT, \
 		LIGHTYELLOW"[SEGV]"DEFAULT, \
 		LIGHTYELLOW"[BUSE]"DEFAULT, \
 		LIGHTYELLOW"[ABRT]"DEFAULT, \
-<<<<<<< HEAD
 		LIGHTYELLOW"[FPE]"DEFAULT, \
-		LIGHTYELLOW"[PIPE]"DEFAULT};
-=======
 		LIGHTYELLOW"[PIPE]"DEFAULT, \
 		LIGHTYELLOW"[TIMEOUT]"DEFAULT};
->>>>>>> 2efd4bd936bd0bbcd4c785abbc28818ea60c05f4
 
 	ft_putstr_fd(func_name, 1);
 	ft_putstr_fd(": ", 1);
