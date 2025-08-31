@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   launch_tests.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:55:22 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/31 13:47:25 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/31 14:16:27 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static void	silent_fd(int fd_out)
 
 static int	evaluate_child_exit_code(int *status)
 {
-	wait(status);
 	if (WIFSIGNALED(*status))
 	{
 		if (WTERMSIG(*status) == SIGSEGV)
@@ -40,14 +39,11 @@ static int	evaluate_child_exit_code(int *status)
 			return (SFPE);
 		if (WTERMSIG(*status) == SIGPIPE)
 			return (PIPE);
+		if (WTERMSIG(*status) == SIGILL)
+			return (SILL);
 	}
-	else if (WIFEXITED(*status))
-	{
-		if (WEXITSTATUS(*status) == 124)
-			return (TIMEOUT);
-		if (WEXITSTATUS(*status) == 0)
+	else if (WIFEXITED(*status) && WEXITSTATUS(*status) == 0)
 			return (OK);
-	}
 	return (KO);
 }
 
@@ -81,13 +77,13 @@ static int	exec_unit_test(t_unit_test *unit_test, t_list *lst)
 	{
 		wait_result = waitpid(pid, &status, WNOHANG);
 		if (wait_result > 0)
-			break ;
+			return (evaluate_child_exit_code(&status));
 		else if (wait_result == -1)
 			break ;
 		usleep(100000);
 		timeout_count++;
 	}
-	return (evaluate_child_exit_code(&status));
+	return (TIMEOUT);
 }
 
 int	launch_tests(char *func_name, t_list *lst)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_print.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:01:08 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/31 13:39:35 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/31 14:06:31 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,14 @@ void	ftu_print_error_fd(char *error_msg, char *test_name, int fd)
 
 void	ftu_print_result(char *func_name, t_unit_test *unit_test)
 {
-	static char	status_msg[8][32] = {LIGHTGREEN"[OK]"DEFAULT, \
+	static char	status_msg[9][32] = {LIGHTGREEN"[OK]"DEFAULT, \
 		LIGHTRED"[KO]"DEFAULT, \
 		LIGHTYELLOW"[SEGV]"DEFAULT, \
 		LIGHTYELLOW"[BUSE]"DEFAULT, \
 		LIGHTYELLOW"[ABRT]"DEFAULT, \
-		LIGHTYELLOW"[FPE]"DEFAULT, \
+		LIGHTYELLOW"[SFPE]"DEFAULT, \
 		LIGHTYELLOW"[PIPE]"DEFAULT, \
+		LIGHTYELLOW"[SILL]"DEFAULT, \
 		LIGHTYELLOW"[TIMEOUT]"DEFAULT};
 
 	ft_putstr_fd(func_name, 1);

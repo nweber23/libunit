@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libunit.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:41:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/31 13:39:54 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/31 13:53:05 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@
 # define ABRT		4
 # define SFPE		5
 # define PIPE		6
-# define TIMEOUT	7
+# define SILL		7
+# define TIMEOUT	8
 
 # ifndef TIMEOUT_PERIOD
 #  define TIMEOUT_PERIOD 10
