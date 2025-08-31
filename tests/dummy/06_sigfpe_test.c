@@ -6,7 +6,7 @@
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 12:13:21 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/31 13:26:27 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/31 13:34:09 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_sigfpe_test(void)
 {
-	if (ft_sigfpe() == 0)
+	if (ft_fpe_error() == 0)
 		return (0);
 	else
 		return (-1);

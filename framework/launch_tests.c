@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   launch_tests.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:55:22 by nmihaile          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2025/08/31 12:15:30 by nmihaile         ###   ########.fr       */
+=======
+/*   Updated: 2025/08/31 13:20:52 by nweber           ###   ########.fr       */
+>>>>>>> 2efd4bd936bd0bbcd4c785abbc28818ea60c05f4
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,27 +45,51 @@ static int	wait_on_pid(int *status)
 		if (WTERMSIG(*status) == SIGPIPE)
 			return (PIPE);
 	}
-	else if (WIFEXITED(*status) && WEXITSTATUS(*status) == 0)
-		return (OK);
+	else if (WIFEXITED(*status))
+	{
+		if (WEXITSTATUS(*status) == 124)
+			return (TIMEOUT);
+		if (WEXITSTATUS(*status) == 0)
+			return (OK);
+	}
 	return (KO);
+}
+
+static void	exec_child(t_unit_test *unit_test, t_list *lst)
+{
+	int	(*func)(void);
+
+	signal(SIGALRM, timeout_handler);
+	alarm(10);
+	silent_fd(STDERR_FILENO);
+	silent_fd(STDIN_FILENO);
+	func = unit_test->f;
+	ft_lstclear(&lst, free);
+	if (func() == -1)
+		exit(EXIT_FAILURE);
+	exit(EXIT_SUCCESS);
 }
 
 static int	exec_unit_test(t_unit_test *unit_test, t_list *lst)
 {
 	pid_t	pid;
 	int		status;
-	int		(*func)(void);
+	int		timeout_count;
+	int		wait_result;
 
+	timeout_count = 0;
 	pid = fork();
 	if (pid == 0)
+		exec_child(unit_test, lst);
+	while (timeout_count < TIMEOUT_PERIOD * 10)
 	{
-		silent_fd(STDERR_FILENO);
-		silent_fd(STDIN_FILENO);
-		func = unit_test->f;
-		ft_lstclear(&lst, free);
-		if (func() == -1)
-			exit(EXIT_FAILURE);
-		exit(EXIT_SUCCESS);
+		wait_result = waitpid(pid, &status, WNOHANG);
+		if (wait_result > 0)
+			break ;
+		else if (wait_result == -1)
+			break ;
+		usleep(100000);
+		timeout_count++;
 	}
 	return (wait_on_pid(&status));
 }

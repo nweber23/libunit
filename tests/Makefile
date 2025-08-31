@@ -5,7 +5,10 @@ CFLAGS	=	-Wall -Wextra -Werror
 
 SRCS	=	main.c \
 			helper/ft_sigfpe.c \
-			ft_bus_error.c \
+			helper/ft_bus_error.c \
+			helper/ft_abort_error.c \
+			helper/ft_pipe_error.c \
+			helper/ft_timeout_error.c \
 			dummy/00_launcher.c \
 			dummy/01_ok_test.c \
 			dummy/02_ko_test.c \
@@ -14,6 +17,7 @@ SRCS	=	main.c \
 			dummy/05_abort_test.c \
 			dummy/06_sigfpe_test.c \
 			dummy/07_pipe_test.c
+			dummy/09_timeout_test.c
 
 OBJS	=	$(addprefix obj/, $(SRCS:.c=.o))
 

@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   libunit.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:41:34 by nweber            #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2025/08/31 12:15:55 by nmihaile         ###   ########.fr       */
+=======
+/*   Updated: 2025/08/31 13:12:55 by nweber           ###   ########.fr       */
+>>>>>>> 2efd4bd936bd0bbcd4c785abbc28818ea60c05f4
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +32,17 @@
 # define SEGV		2
 # define BUSE		3
 # define ABRT		4
+<<<<<<< HEAD
 # define SFPE		5
 # define PIPE		6
+=======
+# define PIPE		5
+# define TIMEOUT	6
+
+# ifndef TIMEOUT_PERIOD
+#  define TIMEOUT_PERIOD 10
+# endif
+>>>>>>> 2efd4bd936bd0bbcd4c785abbc28818ea60c05f4
 
 # define FAILED_CREATE_UNITTEST	"Failed to create (and add) unit_test: "
 # define FAILED_ADD_UNITTEST	"Failed to add unit_test test: "
@@ -55,5 +68,8 @@ void	ftu_print_final_result(void);
 
 // utils-counter.c
 bool	ftu_count_routine_result(int count, int passed, bool count_it);
+
+// utils-signal.c
+void	timeout_handler(int sig);
 
 #endif

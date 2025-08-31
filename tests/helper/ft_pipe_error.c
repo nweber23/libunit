@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   05_abort_test.c                                    :+:      :+:    :+:   */
+/*   ft_pipe_error.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 18:31:28 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/31 12:44:29 by nweber           ###   ########.fr       */
+/*   Created: 2025/08/31 12:44:46 by nweber            #+#    #+#             */
+/*   Updated: 2025/08/31 12:46:39 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../dummy.h"
+#include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
 
-// Remove all CFLAGS so that this demonstration function compiles on linux.
-
-int	ft_abort_test(void)
+int	ft_pipe_error(void)
 {
-	if (ft_abort_error() == 0)
-		return (0);
-	else
+	int		pipe_fds[2];
+
+	if (pipe(pipe_fds) == -1)
 		return (-1);
+	close(pipe_fds[0]);
+	write(pipe_fds[1], "Hello 42", 9);
+	close(pipe_fds[1]);
+	return (0);
 }

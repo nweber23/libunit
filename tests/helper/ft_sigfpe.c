@@ -6,11 +6,11 @@
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 12:55:05 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/31 13:27:55 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/31 13:34:00 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sigfpe(void)
+int	ft_fpe_error(void)
 {
 	int	b;
 	int	result;
