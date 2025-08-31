@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   utils_signal.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
+/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 13:12:19 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/31 13:20:24 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/31 14:54:02 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
 
-void	timeout_handler(int sig)
+void	ftu_timeout_handler(int sig)
 {
 	(void)sig;
 	exit(124);
