@@ -5,6 +5,7 @@ AR		=	ar
 CFLAGS	=	-Wall -Wextra -Werror
 
 SRCS	=	load_test.c \
+			compare_stdout.c \
 			launch_tests.c \
 			utils_print.c \
 			utils_counter.c \

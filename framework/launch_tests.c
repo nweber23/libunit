@@ -6,7 +6,7 @@
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:55:22 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/31 20:44:48 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/31 21:30:50 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ static int	evaluate_child_exit_code(int *status, t_unit_test *unit_test)
 	return (KO);
 }
 
+//	TODO:	we can improve silencing by using flags
+// silent_fd(STDOUT_FILENO);
 static void	exec_child(t_unit_test *unit_test, t_list *lst)
 {
 	int	(*func)(void);
@@ -61,7 +63,6 @@ static void	exec_child(t_unit_test *unit_test, t_list *lst)
 	signal(SIGALRM, ftu_timeout_handler);
 	alarm(10);
 	silent_fd(STDERR_FILENO);
-	silent_fd(STDOUT_FILENO);
 	func = unit_test->f;
 	ft_lstclear(&lst, free);
 	alarm(TIMEOUT_PERIOD);
