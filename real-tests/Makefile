@@ -30,7 +30,12 @@ SRCS	=	main.c \
 			ft_strcmp/06_prefix_less_test.c \
 			ft_strcmp/07_diff_at_end_test.c \
 			ft_strcmp/08_case_sensitive_test.c \
-			ft_strcmp/09_extended_ascii_order_test.c
+			ft_strcmp/09_extended_ascii_order_test.c \
+			ft_putnbr_fd/00_launcher.c \
+			ft_putnbr_fd/01_basic_test.c \
+			ft_putnbr_fd/02_max_int_test.c \
+			ft_putnbr_fd/03_overflow_test.c \
+			ft_putnbr_fd/04_min_int_test.c
 
 OBJS	=	$(addprefix obj/, $(SRCS:.c=.o))
 

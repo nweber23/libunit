@@ -6,7 +6,7 @@
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 21:09:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/31 12:01:49 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/31 21:28:11 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,12 @@ int	ft_strcmp_prefix_less_test(void);
 int	ft_strcmp_diff_at_end_test(void);
 int	ft_strcmp_case_sensitive_test(void);
 int	ft_strcmp_extended_ascii_order_test(void);
+
+// test ft_putnbr_fd
+int	ft_putnbr_fd_launcher(void);
+int	ft_putnbr_fd_basic_test(void);
+int	ft_putnbr_fd_max_int_test(void);
+int	ft_putnbr_fd_overflow_test(void);
+int	ft_putnbr_fd_min_int_test(void);
 
 #endif

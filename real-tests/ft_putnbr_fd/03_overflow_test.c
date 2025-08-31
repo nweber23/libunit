@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   03_overflow_test.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/29 20:43:50 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/31 18:56:10 by nmihaile         ###   ########.fr       */
+/*   Created: 2025/08/31 20:58:32 by nmihaile          #+#    #+#             */
+/*   Updated: 2025/08/31 21:00:47 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../framework/libunit.h"
-#include "test_functions.h"
+#include "../../framework/libunit.h"
+#include "../../libft/libft.h"
 
-int	main(void)
+static void	caller(void)
 {
-	static char	header[] = \
-		LIGHTCYAN""BOLD"-----------«««<< LETS TEST >>»»»-----------\n\n"RESET;
+	ft_putnbr_fd((int)2147483657, 1);
+}
 
-	ft_putstr_fd(header, 1);
-	ft_isalpha_launcher();
-	ft_strlen_launcher();
-	ft_strcmp_launcher();
-	ft_putnbr_fd_launcher();
-	ftu_print_final_result();
-	return (0);
+int	ft_putnbr_fd_overflow_test(void)
+{
+	if (compare_stdout(caller, "-2147483639") == 0)
+		return (0);
+	else
+		return (-1);
 }
