@@ -46,3 +46,5 @@ re:
 
 test: all
 	@./$(NAME)
+
+ret: re test
