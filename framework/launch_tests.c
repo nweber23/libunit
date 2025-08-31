@@ -6,7 +6,7 @@
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:55:22 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/31 11:54:44 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/31 12:15:30 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ static int	wait_on_pid(int *status)
 			return (BUSE);
 		if (WTERMSIG(*status) == SIGABRT)
 			return (ABRT);
+		if (WTERMSIG(*status) == SIGFPE)
+			return (SFPE);
 		if (WTERMSIG(*status) == SIGPIPE)
 			return (PIPE);
 	}

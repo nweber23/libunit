@@ -6,7 +6,7 @@
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 16:58:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/31 11:29:47 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/31 12:17:02 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	ft_dummy_launcher(void)
 	load_test(&testlist, "SEGV_Test", &ft_segv_test);
 	load_test(&testlist, "BUSE_Test", &ft_bus_error_test);
 	load_test(&testlist, "ABORT_Test", &ft_abort_test);
+	load_test(&testlist, "SFPE_Test", &ft_sigfpe_test);
 	load_test(&testlist, "PIPE_Test", &ft_pipe_test);
 	return (launch_tests("Dummy_Test", testlist));
 }
