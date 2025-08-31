@@ -6,7 +6,7 @@
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:55:22 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/31 13:40:08 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/31 13:47:25 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	silent_fd(int fd_out)
 	}
 }
 
-static int	wait_on_pid(int *status)
+static int	evaluate_child_exit_code(int *status)
 {
 	wait(status);
 	if (WIFSIGNALED(*status))
@@ -87,7 +87,7 @@ static int	exec_unit_test(t_unit_test *unit_test, t_list *lst)
 		usleep(100000);
 		timeout_count++;
 	}
-	return (wait_on_pid(&status));
+	return (evaluate_child_exit_code(&status));
 }
 
 int	launch_tests(char *func_name, t_list *lst)
