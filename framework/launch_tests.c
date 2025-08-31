@@ -6,7 +6,7 @@
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:55:22 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/31 15:26:58 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/31 17:37:25 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,12 @@ static int	evaluate_child_exit_code(int *status)
 		if (WTERMSIG(*status) == SIGILL)
 			return (SILL);
 	}
-	else if (WIFEXITED(*status) && WEXITSTATUS(*status) == 0)
+	else if (WIFEXITED(*status))
 	{
-		ftu_total_test_passed(true);
-		return (OK);
+		if (WEXITSTATUS(*status) == 124)
+			return (TIMEOUT);
+		if (WEXITSTATUS(*status) == 0)
+			return (ftu_total_test_passed(true), OK);
 	}
 	return (KO);
 }
@@ -60,6 +62,7 @@ static void	exec_child(t_unit_test *unit_test, t_list *lst)
 	silent_fd(STDIN_FILENO);
 	func = unit_test->f;
 	ft_lstclear(&lst, free);
+	alarm(TIMEOUT_PERIOD);
 	if (func() == -1)
 		exit(EXIT_FAILURE);
 	exit(EXIT_SUCCESS);
@@ -69,25 +72,13 @@ static int	exec_unit_test(t_unit_test *unit_test, t_list *lst)
 {
 	pid_t	pid;
 	int		status;
-	int		timeout_count;
-	int		wait_result;
 
 	ftu_total_test_count(true);
-	timeout_count = 0;
 	pid = fork();
 	if (pid == 0)
 		exec_child(unit_test, lst);
-	while (timeout_count < TIMEOUT_PERIOD * 10)
-	{
-		wait_result = waitpid(pid, &status, WNOHANG);
-		if (wait_result > 0)
-			return (evaluate_child_exit_code(&status));
-		else if (wait_result == -1)
-			break ;
-		usleep(100000);
-		timeout_count++;
-	}
-	return (TIMEOUT);
+	wait(&status);
+	return (evaluate_child_exit_code(&status));
 }
 
 int	launch_tests(char *func_name, t_list *lst)
