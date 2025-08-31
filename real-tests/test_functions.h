@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   test_functions.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
+/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 21:09:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/30 19:07:21 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/31 12:01:49 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TEST_FUNCTIONS_H
 # define TEST_FUNCTIONS_H
+
+# include "../libft/libft.h"
 
 // test ft_isalpha
 int	ft_isalpha_launcher(void);
