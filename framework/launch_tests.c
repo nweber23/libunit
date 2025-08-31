@@ -6,7 +6,7 @@
 /*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:55:22 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/31 14:16:27 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/31 14:30:24 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	evaluate_child_exit_code(int *status)
 			return (SILL);
 	}
 	else if (WIFEXITED(*status) && WEXITSTATUS(*status) == 0)
-			return (OK);
+		return (OK);
 	return (KO);
 }
 
@@ -108,6 +108,7 @@ int	launch_tests(char *func_name, t_list *lst)
 	}
 	ftu_count_routine_result(count, passed, true);
 	ftu_print_routine_results(count, passed);
+	ftu_write_log(func_name, lst, count, passed);
 	ft_lstclear(&lst, free);
 	return (0);
 }

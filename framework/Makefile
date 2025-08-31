@@ -8,7 +8,8 @@ SRCS	=	load_test.c \
 			launch_tests.c \
 			utils_print.c \
 			utils_counter.c \
-			utils_signal.c
+			utils_signal.c \
+			utils_log.c
 OBJS	=	$(addprefix obj/, $(SRCS:.c=.o))
 
 LIBFT	=	../libft/libft.a

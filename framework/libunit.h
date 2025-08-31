@@ -6,7 +6,7 @@
 /*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:41:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/31 13:53:05 by nweber           ###   ########.fr       */
+/*   Updated: 2025/08/31 14:30:16 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <sys/wait.h>
 # include <signal.h>
 # include <stdbool.h>
+# include <fcntl.h>
 # include "colors.h"
 # include "../libft/libft.h"
 
@@ -58,6 +59,7 @@ void	ftu_print_error_fd(char *error_msg, char *test_name, int fd);
 void	ftu_print_result(char *func_name, t_unit_test *unit_test);
 void	ftu_print_routine_results(int count, int passed);
 void	ftu_print_final_result(void);
+void	ftu_write_log(char *func_name, t_list *lst, int count, int passed);
 
 // utils-counter.c
 bool	ftu_count_routine_result(int count, int passed, bool count_it);
