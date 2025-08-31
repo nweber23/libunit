@@ -6,7 +6,7 @@
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:55:24 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/30 12:57:42 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/31 18:05:25 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	load_test(t_list **lst, char *test_name, int (*f)(void))
 	}
 	ft_strlcpy(unit_test->name, test_name, 255);
 	unit_test->f = f;
+	unit_test->sig_num = -1;
+	unit_test->exit_code = -1;
 	lst_item = ft_lstnew(&unit_test);
 	if (lst_item == NULL)
 	{

@@ -6,7 +6,7 @@
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:41:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/31 15:21:58 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/31 18:51:31 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ typedef struct s_unit_test
 	char		name[256];
 	int			(*f)(void);
 	int			status;
+	int			exit_code;
+	int			sig_num;
 	t_unit_test	*next;
 }				t_unit_test;
 
