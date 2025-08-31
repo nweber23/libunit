@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dummy.h                                            :+:      :+:    :+:   */
+/*   09_timeout_test.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 16:57:33 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/31 13:25:43 by nweber           ###   ########.fr       */
+/*   Created: 2025/08/31 13:21:55 by nweber            #+#    #+#             */
+/*   Updated: 2025/08/31 13:25:29 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DUMMY_H
-# define DUMMY_H
+#include "../dummy.h"
 
-# include "../libft/libft.h"
-
-// Helper
-int	ft_bus_error(void);
-int	ft_abort_error(void);
-int	ft_pipe_error(void);
-int	ft_timeout_error(void);
-
-int	ft_dummy_launcher(void);
-int	ft_ok_test(void);
-int	ft_ko_test(void);
-int	ft_segv_test(void);
-int	ft_bus_error_test(void);
-int	ft_abort_test(void);
-int	ft_pipe_test(void);
-int	ft_timeout_test(void);
-
-#endif
+int	ft_timeout_test(void)
+{
+	if (ft_timeout_error() == 0)
+		return (0);
+	else
+		return (-1);
+}

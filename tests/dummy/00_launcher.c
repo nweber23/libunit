@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nweber <nweber@student.42Heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 16:58:34 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/31 11:29:47 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/31 13:26:19 by nweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int	ft_dummy_launcher(void)
 	load_test(&testlist, "BUSE_Test", &ft_bus_error_test);
 	load_test(&testlist, "ABORT_Test", &ft_abort_test);
 	load_test(&testlist, "PIPE_Test", &ft_pipe_test);
+	load_test(&testlist, "TIMEOUT_Test", &ft_timeout_test);
 	return (launch_tests("Dummy_Test", testlist));
 }

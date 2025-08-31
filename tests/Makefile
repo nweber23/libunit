@@ -7,13 +7,15 @@ SRCS	=	main.c \
 			helper/ft_bus_error.c \
 			helper/ft_abort_error.c \
 			helper/ft_pipe_error.c \
+			helper/ft_timeout_error.c \
 			dummy/00_launcher.c \
 			dummy/01_ok_test.c \
 			dummy/02_ko_test.c \
 			dummy/03_sigsegv_test.c \
 			dummy/04_bus_error_test.c \
 			dummy/05_abort_test.c \
-			dummy/07_pipe_test.c
+			dummy/07_pipe_test.c \
+			dummy/09_timeout_test.c
 
 OBJS	=	$(addprefix obj/, $(SRCS:.c=.o))
 
