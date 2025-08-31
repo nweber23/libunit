@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   07_pipe_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 16:58:49 by nweber            #+#    #+#             */
-/*   Updated: 2025/08/31 11:54:24 by nmihaile         ###   ########.fr       */
+/*   Created: 2025/08/31 11:21:48 by nmihaile          #+#    #+#             */
+/*   Updated: 2025/08/31 11:38:46 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../framework/libunit.h"
-#include "dummy.h"
+#include "../dummy.h"
 
-int	main(void)
+int	ft_pipe_test(void)
 {
-	static char	header[] = \
-		LIGHTCYAN""BOLD"---------«««<< DUMMY TESTING >>»»»---------\n\n"RESET;
+	int		pipe_fds[2];
 
-	ft_putstr_fd(header, 1);
-	ft_dummy_launcher();
-	ftu_print_final_result();
+	if (pipe(pipe_fds) == -1)
+		return (-1);
+	close(pipe_fds[0]);
+	write(pipe_fds[1], "Hello 42", 9);
+	close(pipe_fds[1]);
 	return (0);
 }

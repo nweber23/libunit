@@ -6,7 +6,7 @@
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:55:22 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/30 19:52:33 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/31 11:54:44 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static void	silent_fd(int fd_out)
 {
-	int fd;
+	int	fd;
 
 	fd = open("/dev/null", O_WRONLY);
 	if (fd != -1)
@@ -36,6 +36,8 @@ static int	wait_on_pid(int *status)
 			return (BUSE);
 		if (WTERMSIG(*status) == SIGABRT)
 			return (ABRT);
+		if (WTERMSIG(*status) == SIGPIPE)
+			return (PIPE);
 	}
 	else if (WIFEXITED(*status) && WEXITSTATUS(*status) == 0)
 		return (OK);
