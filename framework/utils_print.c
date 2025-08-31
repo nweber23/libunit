@@ -6,7 +6,7 @@
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:01:08 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/31 18:09:19 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/31 19:59:34 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,10 @@ void	ftu_print_result(char *func_name, t_unit_test *unit_test)
 		LIGHTYELLOW"[SILL]"DEFAULT, \
 		LIGHTYELLOW"[TIMEOUT]"DEFAULT};
 
+	ft_putstr_fd(LIGHTMAGENTA, 1);
 	ft_putstr_fd(func_name, 1);
 	ft_putstr_fd(": ", 1);
+	ft_putstr_fd(LIGHTCYAN, 1);
 	ft_putstr_fd(unit_test->name, 1);
 	ft_putstr_fd(": ", 1);
 	ft_putendl_fd(status_msg[unit_test->status], 1);
