@@ -6,3 +6,4 @@
 local/**/*
 unit_test
 run_tests
+*.log
