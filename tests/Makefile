@@ -4,7 +4,9 @@ CC		=	cc
 CFLAGS	=	-Wall -Wextra -Werror
 
 SRCS	=	main.c \
-			ft_bus_error.c \
+			helper/ft_bus_error.c \
+			helper/ft_abort_error.c \
+			helper/ft_pipe_error.c \
 			dummy/00_launcher.c \
 			dummy/01_ok_test.c \
 			dummy/02_ko_test.c \
