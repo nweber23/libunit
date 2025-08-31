@@ -7,7 +7,8 @@ CFLAGS	=	-Wall -Wextra -Werror
 SRCS	=	load_test.c \
 			launch_tests.c \
 			utils_print.c \
-			utils_counter.c
+			utils_counter.c \
+			utils_signal.c
 OBJS	=	$(addprefix obj/, $(SRCS:.c=.o))
 
 LIBFT	=	../libft/libft.a
