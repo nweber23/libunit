@@ -12,12 +12,7 @@ SRCS	=	load_test.c \
 			utils_log.c
 OBJS	=	$(addprefix obj/, $(SRCS:.c=.o))
 
-LIBFT	=	../libft/libft.a
-
-all: $(LIBFT) $(NAME)
-
-$(LIBFT):
-	cd ../libft && $(MAKE) bonus
+all:  $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) rcs $(NAME) $(OBJS)
