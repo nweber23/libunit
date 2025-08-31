@@ -6,7 +6,7 @@
 /*   By: nmihaile <nmihaile@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:55:22 by nmihaile          #+#    #+#             */
-/*   Updated: 2025/08/31 18:09:58 by nmihaile         ###   ########.fr       */
+/*   Updated: 2025/08/31 20:20:06 by nmihaile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static void	exec_child(t_unit_test *unit_test, t_list *lst)
 	signal(SIGALRM, ftu_timeout_handler);
 	alarm(10);
 	silent_fd(STDERR_FILENO);
-	silent_fd(STDIN_FILENO);
+	silent_fd(STDOUT_FILENO);
 	func = unit_test->f;
 	ft_lstclear(&lst, free);
 	alarm(TIMEOUT_PERIOD);
